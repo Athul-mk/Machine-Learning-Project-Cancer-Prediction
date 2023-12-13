@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Breast Cancer Prediction</h1>
+    <form method="POST" accept-charset="UTF-8" action="/predict">
+        <div class="row">
+            <div class="col-md-6 form-control">
+                <label><b>AGE</b></label>
+                <input type="text" id="age"name="age">
+            </div>
+            <br>
+            <div class="col-md-6 form-control">
+                <form action="/action_page.php">
+                <br><br>
+                <label for="menopause">MENOPAUSE</label>
+                <select id="menopause" name="menopause">
+                    <option value="0">premeno</option>
+                    <option value="1">ge40</option>
+                    <option value="2">lt40</option>
+                </select>
+                <br><br><br>
+                <label for="breastquad">BREAST-QUAD</label>
+                <select id="breastquad" name="breastquad">
+                    <option value="0">left_low</option>
+                    <option value="1">left_up</option>
+                    <option value="2">right_low</option>
+                    <option value="3">right_up</option>
+                    <option value="4">central</option>
+                </select>
+                <br><br><br>
+                <label for="breast">BREAST</label>
+                <select id="breast" name="breast">
+                    <option value="0">left</option>
+                    <option value="1">right</option>
+                </select>
+                <br><br><br>
+                <label for="nodecaps">NODE-CAPS</label>
+                <select id="nodecaps" name="nodecaps">
+                    <option value="0">yes</option>
+                    <option value="1">no</option>
+                </select>
+                <br><br><br>
+                <label for="degmalig">DEG-MALIG</label>
+                <select id="degmalig" name="degmalig">
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                </select>
+                <br><br><br>
+                <label for="irradiat">IRRADIAT</label>
+                <select id="irradiat" name="irradiat">
+                    <option value="0">yes</option>
+                    <option value="1">no</option>
+                </select>
+                </form>
+            </div>
+            <br><br><br>
+            <div class="col-md-6 form-control">
+                <label><b>TUMOR-SIZE</b></label>
+                <input type="text" id="tumorsize" name="tumorsize">
+            </div>
+            <br><br>
+            <div class="col-md-6 form-control">
+                <label><b>INV-NODES</b></label>
+                <input type="text" id="invnodes" name="invnodes">
+            </div>
+            <div class="col-md-12 form-control">
+                <input type="submit" class="btn-info" value="predict">
+            </div>
+        </div>
+    </form>
+    {% if predict %}
+        <p>The predicted value is: {{predict}}</p>
+    {% endif %}
+</body>
+</html>
